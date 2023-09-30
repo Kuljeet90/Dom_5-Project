@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Heart Blink </title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        body, html{
+            height: 100%;
+            width: 100%;
+        }
+        #container{
+            height: 400px;
+            width: 350px;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        body{
+            background-color: cyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #container img {
+            height: 100%;
+            width: 100%;
+            object-position: top;
+            object-fit: cover;
+        }
+        #container i {
+            color: #fff;
+            font-size: 75px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%) scale(0);
+            opacity: 0;
+            transition: transform ease 0.5s;
+        }
+    </style>
+</head>
+<body>
+     <div id="container">
+        <img src="https://images.unsplash.com/photo-1683009426952-13567b4fa28b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+
+        <i class="ri-heart-fill"></i>
+     </div>
+     <script>
+         var con = document.querySelector("#container")
+        var love = document.querySelector("i")
+         con.addEventListener("dblclick",function(){
+             love.style.transform = 'translate(-50% , -50%) scale(1)'
+            love.style.opacity =0.8;
+
+            setTimeout(function (){
+                love.style.opacity = 0;
+                console.log("hey")
+            },1000)
+            
+            setTimeout(function(){
+                love.style.transform = "translate(-50% , -50%) scale(0)"
+            },2000)
+        })
+
+     </script>
+</body>
+</html>
